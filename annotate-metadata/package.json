@@ -1,0 +1,14 @@
+{
+  "name": "annotate-metadata",
+  "version": "1.0.0",
+  "description": "annotate-metadata",
+  "main": "index.js",
+  "scripts": {
+    "start": "faas-js-runtime ./index.js", 
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "MIT No Attribution",
+  "dependencies": {
+    "faas-js-runtime": "^0.9.0"
+  }
+}
