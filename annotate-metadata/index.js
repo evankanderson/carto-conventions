@@ -22,6 +22,12 @@
   body.status.template.metadata.annotations['app.tanzu.vmware.com/source-url'] = source
   body.status.template.metadata.annotations['app.tanzu.vmware.com/source-ref'] = label
   body.status.template.metadata.annotations['app.tanzu.vmware.com/source-hash'] = revision
+  if (! body.status.appliedConventions) {
+    body.status.appliedConventions = []
+  }
+  body.status.appliedConventions.push('annotate-metadata')
+
+  console.log('Returning: ', body)
 
   return body;
 };
