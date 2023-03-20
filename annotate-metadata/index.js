@@ -1,11 +1,11 @@
  async function annotateImage(context, body) {
-  context.log('Got request: ', body);
+  console.log('Got request: ', body);
 
   const image = body['spec']['imageConfig'][0];
 
   const imageData = image.config.config;
 
-  context.log('Image data is: ', imageData);
+  console.log('Image data is: ', imageData);
 
   return body;
 };
