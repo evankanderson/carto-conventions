@@ -1,9 +1,13 @@
-module.exports = async function sampleFunction(context) {
-  const ret = 'This is a sample function';
-  return new Promise((resolve, reject) => {
-    setTimeout(_ => {
-      context.log.info('sending response to client')
-      resolve(ret);
-    }, 500);
-  });
+ async function annotateImage sampleFunction(context, body) {
+  context.log('Got request: ', body);
+
+  const image = body['spec']['imageConfig'][0];
+
+  const imageData = image.config.config;
+
+  context.log('Image data is: ', imageData);
+
+  return body;
 };
+
+module.exports = annotateImage
