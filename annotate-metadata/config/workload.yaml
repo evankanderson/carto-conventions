@@ -8,6 +8,7 @@ metadata:
 spec:
   source:
     git:
-      url: <https URL for your generated project's Git repository>
+      url: https://github.com/evankanderson/carto-conventions.git
       ref:
         branch: main
+    subPath: annotate-metadata

@@ -1,4 +1,4 @@
- async function annotateImage sampleFunction(context, body) {
+ async function annotateImage(context, body) {
   context.log('Got request: ', body);
 
   const image = body['spec']['imageConfig'][0];
