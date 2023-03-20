@@ -8,7 +8,7 @@
   let revision = imageData.Labels['org.opencontainers.image.revision'];
   let label = imageData.Labels['org.opencontainers.image.version']
   let source = imageData.Labels['org.opencontainers.image.source']
-  if (! version) {
+  if (! revision) {
     // Legacy format is e.g. "main/f11adae1c008aa8e381902fb7952686d0e7aac14" in the "source" field
     // And no other keys from https://github.com/opencontainers/image-spec/blob/main/annotations.md#pre-defined-annotation-keys set
     let legacy = imageData.Labels['org.opencontainers.image.source']
