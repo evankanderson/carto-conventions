@@ -22,6 +22,13 @@ async function annotateImage(context, body) {
       }
     }
 
+    if (!('metadata' in body.status.template)) {
+      body.template.status = {'metadata': {}};
+    }
+    if (!('annotations' in body.status.template.metadata)) {
+      body.status.template.metadata = {'annotations': {}};
+    }
+
     body.status.template.metadata.annotations['app.tanzu.vmware.com/source-url'] = source;
     body.status.template.metadata.annotations['app.tanzu.vmware.com/source-ref'] = label;
     body.status.template.metadata.annotations['app.tanzu.vmware.com/source-hash'] = revision;
