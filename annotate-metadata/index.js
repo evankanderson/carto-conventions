@@ -1,4 +1,8 @@
 async function annotateImage(context, body) {
+  // The convention contract does not fill in status.template at all,
+  // so start with a copy
+  body.status.template = {...body.spec.template}
+
   const image = body['spec']['imageConfig'][0];
 
   const imageData = image.config.config;
@@ -23,7 +27,7 @@ async function annotateImage(context, body) {
     }
 
     if (!('metadata' in body.status.template)) {
-      body.template.status = {'metadata': {}};
+      body.status.template.metadata = {};
     }
     if (!('annotations' in body.status.template.metadata)) {
       body.status.template.metadata = {'annotations': {}};
