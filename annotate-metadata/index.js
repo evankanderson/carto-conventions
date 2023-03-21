@@ -19,7 +19,7 @@ async function annotateImage(context, body) {
       // And no other keys from https://github.com/opencontainers/image-spec/blob/main/annotations.md#pre-defined-annotation-keys set
       let legacy = imageData.Labels['org.opencontainers.image.source'];
       console.log('On legacy path, splitting ', legacy);
-      [revision, label] = legacy.split('/');
+      [label, revision] = legacy.split('/');
       source = body.spec.template.metadata['app.tanzu.vmware.com/source-url'];
       if (!source) {
         source = "unknown";
