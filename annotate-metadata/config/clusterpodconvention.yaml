@@ -1,0 +1,11 @@
+apiVersion: conventions.apps.tanzu.vmware.com/v1alpha1
+kind: ClusterPodConvention
+metadata:
+  name: annotate-metadata
+spec:
+  webhook:
+    clientConfig:
+      # Note, for Knative Serving you will need to use a _public_ URL, as Knative
+      # does not yet support TLS on cluster-internal hostnames.
+      url: # https://annotate-metadata.my-conventions.my-cluster.example.com
+
